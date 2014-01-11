@@ -67,6 +67,8 @@ cat >/etc/ntp/step-tickers <<EOF
 3.fedora.pool.ntp.org
 EOF
 
+rm -f /etc/sudoers.d/90-cloud-init-users
+
 echo "######################"
 echo "Manual Action Required"
 echo "######################"

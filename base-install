@@ -7,6 +7,7 @@ fi
 
 yum -y shell <<EOF
 install cloud-init
+install patch
 install ed
 install git
 install gcc

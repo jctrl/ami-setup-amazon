@@ -1,64 +1,9 @@
 #!/bin/sh
 
-# Set a root pw if desired, not required with cloud image since it will come
-# up with provisioning ssh key
-
-# Remove cloud-init, I prefer mine
-
 if [ ! -e /home/ami-setup/.git ]; then
 echo "Must clone ami-setup to /home/ami-setup"
 exit 1
 fi
-
-yum -y shell <<EOF
-install cloud-init
-install ed
-install git
-install gcc
-install make
-install perl
-install xinetd
-install ntp
-install ltrace
-install nc
-install nmap
-install wireshark
-install cloud-utils-growpart
-install rsync
-install perl-JSON
-install vim-enhanced
-install perl-Digest-SHA
-install perl-Digest-SHA1 
-install perl-Digest-MD5
-install perl-Cache-Memcached
-install perl-Net-DNS
-install perl-Net-SSH
-install perl-Net-SSH-Perl
-install perl-Net-SSH2 
-install perl-MIME-Lite 
-install readline-devel
-install memcached
-install httpd
-install httpd-devel 
-install mod_ssl 
-install mod_gnutls
-install msmtp
-install perl-Net-Amazon-S3
-install perl-Net-Amazon-EC2
-install iotop
-install xauth
-install glibc-static
-install zlib-static
-install libcurl-devel
-install tidy
-install perltidy
-install perl-LWP-Protocol-https
-install perl-MongoDB
-install make
-
-upgrade
-run
-EOF
 
 chown -R root:root /home/ami-setup/overlay
 cd /home/ami-setup/overlay || exit 1

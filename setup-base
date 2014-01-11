@@ -60,7 +60,9 @@ upgrade
 run
 EOF
 
-cp /home/cloud-init/files/cloud.cfg* /etc/cloud/
+chown -R root:root /home/cloud-init/overlay
+cd /home/cloud-init/overlay || exit 1
+find . -print | cpio -pdmuv /
 
 ed /root/.bashrc <<EOF
 g/alias/d

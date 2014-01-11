@@ -1,0 +1,24 @@
+#!/bin/sh -x
+rm -rf /tmp/*.txt
+rm -rf /tmp/*.log
+rm -rf /tmp/*.xml
+rm -rf /tmp/.??*
+rm -rf /tmp/*
+
+# Start with blank slate
+rm -rf /root/.ssh
+umask 077
+mkdir -p /root/.ssh
+
+find /var/log -name "*-2*" -exec rm -f {} \;
+find /var/log -name "*.old" -exec rm -f {} \;
+
+cat /dev/null > /var/log/messages
+cat /dev/null > /var/log/dmesg
+cat /dev/null > /var/log/dracut.log
+cat /dev/null > /var/log/btmp
+cat /dev/null > /var/log/wtmp
+
+rm -f /var/log/sa/*
+
+sync

@@ -1,0 +1,101 @@
+#!/bin/sh
+
+# Set a root pw if desired, not required with cloud image since it will come
+# up with provisioning ssh key
+
+# Remove cloud-init, I prefer mine
+
+if [ ! -e /home/ami-setup/.git ]; then
+echo "Must clone ami-setup to /home/ami-setup"
+exit 1
+fi
+
+yum -y shell <<EOF
+remove cloud-init
+
+install git
+install gcc
+install make
+install perl
+install glibc.i686
+install libstdc++.i686
+install expect
+install xinetd
+install ntp
+install kernel-devel
+install ltrace
+install nc
+install nmap
+install wireshark
+install cloud-utils-growpart
+install rsync
+install perl-JSON
+install vim-enhanced
+install perl-Digest-SHA
+install perl-Digest-SHA1 
+install perl-Digest-MD5
+install perl-Cache-Memcached
+install perl-Net-DNS
+install perl-Net-SSH
+install perl-Net-SSH-Perl
+install perl-Net-SSH2 
+install perl-MIME-Lite 
+install readline-devel
+install memcached
+install httpd
+install httpd-devel 
+install mod_ssl 
+install mod_gnutls
+install msmtp
+install perl-Net-Amazon-S3
+install perl-Net-Amazon-EC2
+install iotop
+install xauth
+
+install glibc-devel.i686
+install glibc-static
+install glibc-static.i686
+install zlib-static
+install libcurl-devel
+install tidy
+install perltidy
+install perl-LWP-Protocol-https
+install openssl.i686
+install perl-MongoDB
+install python-devel
+install make
+
+upgrade
+run
+EOF
+
+ed /root/.bashrc <<EOF
+g/alias/d
+.
+w
+q
+EOF
+
+# Set up ssh access
+ed /etc/ssh/sshd_config <<EOF
+g/PasswordAuthentication/d
+g/PermitRootLogin/d
+a
+PermitRootLogin yes
+PasswordAuthentication yes
+.
+w
+q
+EOF
+
+
+# Install Nathan's rclocal scripts
+yum -y localinstall /home/ami-setup/rpms/*.rpm
+
+ed /etc/fstab <<EOF
+g/\/mnt\s*auto/d
+.
+w
+q
+EOF
+

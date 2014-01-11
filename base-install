@@ -57,7 +57,26 @@ install sysstat
 install dstat 
 install lvm2
 install yum-plugin-rpm-warm-cache
-
+install bind-utils
+install traceroute
+install mtr
+install zip
+install unzip
+install bzip2
+install lzma
+install tree
+install time
+install sqlite
+install rpm-build
+install perl-Term-ReadLine-Gnu
+install perl-Term-ReadLine-Perl
+install mailx
+install iptraf-ng
+install iperf
+install fping
+install ethtool
+install dos2unix
+install dnsmasq
 upgrade
 run
 EOF

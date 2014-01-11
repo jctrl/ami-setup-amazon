@@ -50,6 +50,7 @@ install perltidy
 install perl-LWP-Protocol-https
 install perl-MongoDB
 install make
+install lsof
 
 upgrade
 run

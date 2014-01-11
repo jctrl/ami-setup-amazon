@@ -5,6 +5,8 @@ echo "Must clone ami-setup to /home/ami-setup"
 exit 1
 fi
 
+setenforce 0
+
 chown -R root:root /home/ami-setup/overlay
 cd /home/ami-setup/overlay || exit 1
 find . -print | cpio -pdmuv /
@@ -28,6 +30,16 @@ w
 q
 EOF
 
+ed /etc/sysconfig/selinux <<EOF
+g/SELINUX=/d
+$
+a
+SELINUX=disabled
+.
+w
+q
+EOF
+
 # Create dir for rsyslog
 mkdir -p /home/local
 
@@ -41,6 +53,8 @@ rm -rf /var/lib/cloud/instances/*
 # Remove 'fedora' userid if it was set up
 
 userdel -f fedora
+
+
 
 echo "######################"
 echo "Manual Action Required"

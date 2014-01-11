@@ -56,6 +56,16 @@ rm -rf /var/lib/cloud/instances/*
 userdel -f fedora
 rm -rf /home/fedora
 
+# enable ntp
+systemctl enable ntpdate.service
+systemctl enable ntpd.service
+
+cat >/etc/ntp/step-tickers <<EOF
+0.fedora.pool.ntp.org
+1.fedora.pool.ntp.org
+2.fedora.pool.ntp.org
+3.fedora.pool.ntp.org
+EOF
 
 echo "######################"
 echo "Manual Action Required"

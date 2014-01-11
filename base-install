@@ -77,6 +77,8 @@ install fping
 install ethtool
 install dos2unix
 install dnsmasq
+install sendmail
+install sendmail-cf
 upgrade
 run
 EOF

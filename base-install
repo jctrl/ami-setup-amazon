@@ -79,6 +79,7 @@ install dos2unix
 install dnsmasq
 install sendmail
 install sendmail-cf
+install telnet
 upgrade
 run
 EOF

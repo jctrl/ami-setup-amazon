@@ -60,8 +60,8 @@ upgrade
 run
 EOF
 
-chown -R root:root /home/cloud-init/overlay
-cd /home/cloud-init/overlay || exit 1
+chown -R root:root /home/ami-setup/overlay
+cd /home/ami-setup/overlay || exit 1
 find . -print | cpio -pdmuv /
 
 ed /root/.bashrc <<EOF

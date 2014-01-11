@@ -33,4 +33,6 @@ rm -rf /var/lib/cloud/instances/*
 
 rm -f /var/log/sa/*
 
+echo "baseami" > /etc/hostname
+
 sync

@@ -1,0 +1,3 @@
+--max-time=1800
+--fail
+--expire-time=1h

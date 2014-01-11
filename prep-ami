@@ -19,6 +19,8 @@ cat /dev/null > /var/log/dracut.log
 cat /dev/null > /var/log/btmp
 cat /dev/null > /var/log/wtmp
 
+rm -rf /var/lib/clouds/instances/*
+
 rm -f /var/log/sa/*
 
 sync

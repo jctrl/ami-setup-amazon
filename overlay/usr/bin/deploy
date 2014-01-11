@@ -1,0 +1,44 @@
+#!/bin/sh
+
+#
+# Fanfare deployment script - depends on 'aws' tool being installed, along with an 
+# appropriate set of credentials in ~root/.awssecret file
+#
+
+targetitem="$1"
+
+if [ x"$targetitem" = "x" ]; then
+  echo "Usage: $0 aws-bucket-path-and-item"
+  exit
+fi
+
+TMPDEPLOY=`mktemp /tmp/deploy-script.XXXXXXXXXX` || exit 1
+
+chmod 600 $TMPDEPLOY
+
+echo "Retrieving $targetitem to $TMPDEPLOY:"
+aws get "$targetitem" $TMPDEPLOY 
+echo "Done retrieving $targetitem to $TMPDEPLOY."
+
+if [ ! -s $TMPDEPLOY ]; then
+	echo "Failed deployment script retrieval, or deploy script is empty."
+	ls -al $TMPDEPLOY
+	rm -f $TMPDEPLOY
+	exit 1
+fi
+
+if [ $? != 0 ]; then
+	echo "Failed deployment script retrieval."
+	ls -al $TMPDEPLOY
+	rm -f $TMPDEPLOY
+	exit 2
+fi
+
+chmod 700 $TMPDEPLOY
+shift 1
+echo "Executing $TMPDEPLOY:"
+$TMPDEPLOY "$@" 2>&1
+echo "Done executing $TMPDEPLOY."
+rm -f $TMPDEPLOY
+
+exit 0

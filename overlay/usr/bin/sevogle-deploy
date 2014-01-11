@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+
+$ARGV[0] = "sevogle-deployment/pkg/" . $ARGV[0];
+exec("/usr/bin/deploy", @ARGV);

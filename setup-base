@@ -83,6 +83,8 @@ w
 q
 EOF
 
+# Create dir for rsyslog
+mkdir -p /home/local
 
 # Install Nathan's rclocal scripts
 yum -y localinstall /home/ami-setup/rpms/*.rpm
@@ -94,3 +96,9 @@ w
 q
 EOF
 
+
+echo "######################"
+echo "Manual Action Required"
+echo "######################"
+echo "Populate ~root/.awssecret with AWS deployment keys."
+echo ""

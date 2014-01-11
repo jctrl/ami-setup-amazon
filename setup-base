@@ -54,7 +54,7 @@ rm -rf /var/lib/cloud/instances/*
 # Remove 'fedora' userid if it was set up
 
 userdel -f fedora
-
+rm -rf /home/fedora
 
 
 echo "######################"

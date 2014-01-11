@@ -4,6 +4,7 @@ rm -rf /tmp/*.log
 rm -rf /tmp/*.xml
 rm -rf /tmp/.??*
 rm -rf /tmp/*
+rm -f /var/spool/mail/*
 
 # Start with blank slate
 rm -rf /root/.ssh

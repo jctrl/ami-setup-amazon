@@ -55,6 +55,7 @@ install lsof
 install psmisc
 install sysstat
 install dstat 
+install lvm2
 
 upgrade
 run

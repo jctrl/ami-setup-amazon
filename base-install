@@ -52,7 +52,9 @@ install perl-LWP-Protocol-https
 install perl-MongoDB
 install make
 install lsof
-install psutils
+install psmisc
+install sysstat
+install dstat 
 
 upgrade
 run

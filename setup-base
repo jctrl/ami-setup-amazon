@@ -11,18 +11,14 @@ exit 1
 fi
 
 yum -y shell <<EOF
-remove cloud-init
-
+install cloud-init
+install ed
 install git
 install gcc
 install make
 install perl
-install glibc.i686
-install libstdc++.i686
-install expect
 install xinetd
 install ntp
-install kernel-devel
 install ltrace
 install nc
 install nmap
@@ -51,23 +47,20 @@ install perl-Net-Amazon-S3
 install perl-Net-Amazon-EC2
 install iotop
 install xauth
-
-install glibc-devel.i686
 install glibc-static
-install glibc-static.i686
 install zlib-static
 install libcurl-devel
 install tidy
 install perltidy
 install perl-LWP-Protocol-https
-install openssl.i686
 install perl-MongoDB
-install python-devel
 install make
 
 upgrade
 run
 EOF
+
+cp /home/cloud-init/files/cloud.cfg* /etc/cloud/
 
 ed /root/.bashrc <<EOF
 g/alias/d

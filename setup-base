@@ -89,13 +89,9 @@ mkdir -p /home/local
 # Install Nathan's rclocal scripts
 yum -y localinstall /home/ami-setup/rpms/*.rpm
 
-ed /etc/fstab <<EOF
-g/\/mnt\s*auto/d
-.
-w
-q
-EOF
-
+# Clean up any cloud-init stuff
+rm -rf /var/lib/cloud/instance
+rm -rf /var/lib/cloud/instances/*
 
 echo "######################"
 echo "Manual Action Required"

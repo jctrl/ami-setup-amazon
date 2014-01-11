@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cloud-init init
+cloud-init init --local
+cloud-init modules --mode=config
+cloud-init modules --mode=final

@@ -19,7 +19,9 @@ cat /dev/null > /var/log/dracut.log
 cat /dev/null > /var/log/btmp
 cat /dev/null > /var/log/wtmp
 
-rm -rf /var/lib/clouds/instances/*
+rm -rf /var/lib/cloud/data
+rm -rf /var/lib/cloud/instance
+rm -rf /var/lib/cloud/instances/*
 
 rm -f /var/log/sa/*
 

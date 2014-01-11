@@ -47,6 +47,7 @@ mkdir -p /home/local
 yum -y localinstall /home/ami-setup/rpms/*.rpm
 
 # Clean up any cloud-init stuff
+rm -rf /var/lib/cloud/data
 rm -rf /var/lib/cloud/instance
 rm -rf /var/lib/cloud/instances/*
 

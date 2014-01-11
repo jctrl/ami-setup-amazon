@@ -38,6 +38,10 @@ yum -y localinstall /home/ami-setup/rpms/*.rpm
 rm -rf /var/lib/cloud/instance
 rm -rf /var/lib/cloud/instances/*
 
+# Remove 'fedora' userid if it was set up
+
+userdel -f fedora
+
 echo "######################"
 echo "Manual Action Required"
 echo "######################"

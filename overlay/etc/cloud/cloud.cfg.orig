@@ -1,8 +1,8 @@
 users:
-# - default
+ - default
 
-disable_root: 0
-ssh_pwauth:   1
+disable_root: 1
+ssh_pwauth:   0
 
 locale_configfile: /etc/sysconfig/i18n
 mount_default_fields: [~, ~, 'auto', 'defaults,nofail', '0', '2']
@@ -31,24 +31,32 @@ cloud_config_modules:
  - yum-add-repo
  - package-update-upgrade-install
  - timezone
-# - puppet
-# - chef
-# - salt-minion
-# - mcollective
-# - disable-ec2-metadata
+ - puppet
+ - chef
+ - salt-minion
+ - mcollective
+ - disable-ec2-metadata
  - runcmd
 
 cloud_final_modules:
+ - rightscale_userdata
  - scripts-per-once
  - scripts-per-boot
  - scripts-per-instance
- - [scripts-user, always]
+ - scripts-user
  - ssh-authkey-fingerprints
  - keys-to-console
  - phone-home
  - final-message
 
 system_info:
+  default_user:
+    name: fedora
+    lock_passwd: true
+    gecos: Fedora Cloud User
+    groups: [wheel, adm, systemd-journal]
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    shell: /bin/bash
   distro: fedora
   paths:
     cloud_dir: /var/lib/cloud

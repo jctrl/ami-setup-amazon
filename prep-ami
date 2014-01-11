@@ -14,6 +14,10 @@ mkdir -p /root/.ssh
 find /var/log -name "*-2*" -exec rm -f {} \;
 find /var/log -name "*.old" -exec rm -f {} \;
 
+# Empty out the log files
+find /var/log -type f -exec cp /dev/null {} \;
+cp /dev/null /home/local/messages.debug
+
 cat /dev/null > /var/log/messages
 cat /dev/null > /var/log/dmesg
 cat /dev/null > /var/log/dracut.log

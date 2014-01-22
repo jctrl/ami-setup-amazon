@@ -80,6 +80,12 @@ install dnsmasq
 install sendmail
 install sendmail-cf
 install telnet
+install s3cmd
+install httpd
+install rsyslog-relp
+install strace
+install ltrace
+install mbuffer
 upgrade
 run
 EOF

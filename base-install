@@ -86,6 +86,7 @@ install rsyslog-relp
 install strace
 install ltrace
 install mbuffer
+install yajl
 upgrade
 run
 EOF

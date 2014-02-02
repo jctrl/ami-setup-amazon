@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# So it can locate the config file
+if [ "x$HOME" == "x" ]; then
+export HOME=/root
+fi
+
 FILE="$1"
 DEST="$2"
 

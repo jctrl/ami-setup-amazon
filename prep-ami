@@ -7,6 +7,13 @@ rm -rf /tmp/*.log
 rm -rf /tmp/*.xml
 rm -rf /tmp/.??*
 rm -rf /tmp/*
+
+rm -rf /var/tmp/*.txt
+rm -rf /var/tmp/*.log
+rm -rf /var/tmp/*.xml
+rm -rf /var/tmp/.??*
+rm -rf /var/tmp/*
+
 rm -f /var/spool/mail/*
 
 # Start with blank slate

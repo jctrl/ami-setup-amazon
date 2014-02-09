@@ -94,6 +94,8 @@ install pcre-devel
 install sqlite-devel
 install openssl-devel
 install tidy-devel
+install perl-CGI
+install mysql
 upgrade
 run
 EOF

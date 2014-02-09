@@ -87,6 +87,8 @@ install strace
 install ltrace
 install mbuffer
 install yajl
+install glibc-devel
+install gcc-c++
 upgrade
 run
 EOF

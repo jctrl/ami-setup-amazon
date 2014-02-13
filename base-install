@@ -87,6 +87,7 @@ install strace
 install ltrace
 install mbuffer
 install yajl
+install perl-Sys-Syslog
 upgrade
 run
 EOF

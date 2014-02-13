@@ -88,6 +88,15 @@ install ltrace
 install mbuffer
 install yajl
 install perl-Sys-Syslog
+install glibc-devel
+install gcc-c++
+install mod_php
+install pcre-devel
+install sqlite-devel
+install openssl-devel
+install tidy-devel
+install perl-CGI
+install mysql
 upgrade
 run
 EOF

@@ -97,6 +97,7 @@ install openssl-devel
 install tidy-devel
 install perl-CGI
 install mysql
+install python-pip
 upgrade
 run
 EOF

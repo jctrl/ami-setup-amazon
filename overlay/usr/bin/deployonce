@@ -13,7 +13,7 @@ if [ x"$targetitem" = "x" ]; then
 fi
 
 mkdir -p /etc/deployed
-KEYSAFE=/etc/deployed/`echo -n "$1" | perl -pi -e "tr/A-Za-z0-9\-\./_/c"`
+KEYSAFE=/etc/deployed/`echo -n "$1" | perl -p -e "tr/A-Za-z0-9\-\./_/c"`
 if [ -e $KEYSAFE ]; then
 	echo "Skipping deployment of ($targetitem), detected as already deployed."
 	echo "To redeploy, remove the files:"

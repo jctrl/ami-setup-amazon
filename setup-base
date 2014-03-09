@@ -72,6 +72,5 @@ rm -f /etc/sudoers.d/90-cloud-init-users
 echo "######################"
 echo "Manual Action Required"
 echo "######################"
-echo "Populate ~root/.awssecret with AWS deployment keys mode 0600."
-echo "Once that is done, run: sevogle-deploy aws"
+echo "Populate ~root/.awssecret and ~root/.s3cfg with AWS deployment keys mode 0600."
 echo ""

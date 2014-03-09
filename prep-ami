@@ -16,6 +16,8 @@ rm -rf /var/tmp/*
 
 rm -f /var/spool/mail/*
 
+rm -f /root/.bash_history
+
 # Start with blank slate
 rm -rf /root/.ssh
 umask 077

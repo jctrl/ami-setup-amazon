@@ -6,20 +6,17 @@ exit 1
 fi
 
 yum -y shell <<EOF
-install cloud-init
 install patch
 install ed
 install git
 install gcc
 install make
 install perl
-install xinetd
 install ntp
 install ltrace
 install nc
 install nmap
 install wireshark
-install cloud-utils-growpart
 install rsync
 install perl-JSON
 install vim-enhanced
@@ -34,10 +31,10 @@ install perl-Net-SSH2
 install perl-MIME-Lite 
 install readline-devel
 install memcached
-install httpd
-install httpd-devel 
-install mod_ssl 
-install mod_gnutls
+install httpd24
+install httpd24-devel 
+install mod24_ssl 
+install mod24_gnutls
 install msmtp
 install perl-Net-Amazon-S3
 install perl-Net-Amazon-EC2
@@ -56,7 +53,6 @@ install psmisc
 install sysstat
 install dstat 
 install lvm2
-install yum-plugin-rpm-warm-cache
 install bind-utils
 install traceroute
 install mtr
@@ -81,7 +77,6 @@ install sendmail
 install sendmail-cf
 install telnet
 install s3cmd
-install httpd
 install rsyslog-relp
 install strace
 install ltrace
@@ -90,22 +85,14 @@ install yajl
 install perl-Sys-Syslog
 install glibc-devel
 install gcc-c++
-install mod_php
+install mod24_php
 install pcre-devel
 install sqlite-devel
 install openssl-devel
 install tidy-devel
 install perl-CGI
 install mysql
-install python-pip
-install python-virtualenv
 install yum-utils
-install python-ply
-install python-dateutil
-install python-rsa
-install python-docutils
-install python-colorama
-install python-six
 upgrade
 run
 EOF

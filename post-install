@@ -50,8 +50,8 @@ userdel -f ec2-user
 rm -rf /home/ec2-user
 
 # enable ntp
-systemctl enable ntpdate.service
-systemctl enable ntpd.service
+chkconfig ntpdate on
+chkconfig ntpd on
 
 cat >/etc/ntp/step-tickers <<EOF
 0.amazon.pool.ntp.org

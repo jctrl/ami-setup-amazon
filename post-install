@@ -18,6 +18,13 @@ w
 q
 EOF
 
+ed /root/.cshrc <<EOF
+g/alias/d
+.
+w
+q
+EOF
+
 # Set up ssh access
 ed /etc/ssh/sshd_config <<EOF
 g/PasswordAuthentication/d

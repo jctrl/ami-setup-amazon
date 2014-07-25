@@ -5,7 +5,7 @@ echo "Must clone ami-setup to /home/ami-setup"
 exit 1
 fi
 
-setenforce 0
+yum -y upgrade
 
 chown -R root:root /home/ami-setup/overlay
 cd /home/ami-setup/overlay || exit 1

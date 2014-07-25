@@ -109,3 +109,4 @@ notest install Path::Tiny
 notest install MongoDB
 EOF
 
+rm -rf /root/.cpan/build

@@ -26,9 +26,6 @@ install perl-Digest-SHA1
 install perl-Digest-MD5
 install perl-Cache-Memcached
 install perl-Net-DNS
-install perl-Net-SSH
-install perl-Net-SSH-Perl
-install perl-Net-SSH2 
 install perl-MIME-Lite 
 install readline-devel
 install memcached
@@ -80,7 +77,6 @@ install ltrace
 install perl-Sys-Syslog
 install glibc-devel
 install gcc-c++
-install mod24_php
 install pcre-devel
 install sqlite-devel
 install openssl-devel
@@ -101,3 +97,15 @@ pip install --upgrade s3cmd
 #upgrade
 #run
 #EOF
+
+rm -rf /root/.cpan/build
+echo "" | perl -MCPAN -e shell
+
+perl -MCPAN -e shell <<EOF
+notest install Term::ReadLine::Perl
+notest install Term::ReadLine::Gnu
+notest install Config::AutoConf
+notest install Path::Tiny
+notest install MongoDB
+EOF
+

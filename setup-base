@@ -30,16 +30,6 @@ w
 q
 EOF
 
-ed /etc/sysconfig/selinux <<EOF
-g/SELINUX=/d
-$
-a
-SELINUX=disabled
-.
-w
-q
-EOF
-
 # Create dir for rsyslog
 mkdir -p /home/local
 
@@ -56,18 +46,21 @@ rm -rf /var/lib/cloud/instances/*
 userdel -f fedora
 rm -rf /home/fedora
 
+userdel -f ec2-user
+rm -rf /home/ec2-user
+
 # enable ntp
 systemctl enable ntpdate.service
 systemctl enable ntpd.service
 
 cat >/etc/ntp/step-tickers <<EOF
-0.fedora.pool.ntp.org
-1.fedora.pool.ntp.org
-2.fedora.pool.ntp.org
-3.fedora.pool.ntp.org
+0.amazon.pool.ntp.org
+1.amazon.pool.ntp.org
+2.amazon.pool.ntp.org
+3.amazon.pool.ntp.org
 EOF
 
-rm -f /etc/sudoers.d/90-cloud-init-users
+rm -f /etc/sudoers.d/cloud-init
 
 echo "######################"
 echo "Manual Action Required"

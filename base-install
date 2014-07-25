@@ -93,6 +93,9 @@ install tidy-devel
 install perl-CGI
 install mysql
 install yum-utils
+install python-pip
 upgrade
 run
 EOF
+
+pip install s3cmd

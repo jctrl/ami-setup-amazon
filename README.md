@@ -8,12 +8,7 @@ DO NOT commit any access keys since this repo is public.
 Initial setup - paravirtual image
 =================================
 
-Launch fedora 20 image as a m1 from cloud.fedoraproject.org.
-As of 2014-07-07 this is:
-
-	F20 64bit - us-east - ami-21362b48
-
-Launch as an m3.medium with at least ssh access open.
+Launch amazon linux image in whichever flavor is needed, with SSH access.
 
 Run these commands:
 
@@ -21,3 +16,7 @@ Run these commands:
 	git clone https://github.com/unixtools/ami-setup
 	cd ami-setup
 	./base-install
+	# reboot if needed
+	./post-install
+
+Populate any deployment credentials on the box

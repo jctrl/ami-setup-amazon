@@ -29,9 +29,12 @@ EOF
 ed /etc/ssh/sshd_config <<EOF
 g/PasswordAuthentication/d
 g/PermitRootLogin/d
+g/MaxAuthTries/d
 a
 PermitRootLogin yes
 PasswordAuthentication yes
+# Allow more key attempts
+MaxAuthTries 20
 .
 w
 q

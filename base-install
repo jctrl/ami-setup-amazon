@@ -5,7 +5,8 @@ echo "Must clone ami-setup to /home/ami-setup"
 exit 1
 fi
 
-yum -y shell <<EOF
+
+yum -y --skip-broken shell <<EOF
 install patch
 install ed
 install git
@@ -34,7 +35,6 @@ install memcached
 install httpd24
 install httpd24-devel 
 install mod24_ssl 
-install mod24_gnutls
 install msmtp
 install perl-Net-Amazon-S3
 install perl-Net-Amazon-EC2
@@ -67,7 +67,6 @@ install rpm-build
 install perl-Term-ReadLine-Gnu
 install perl-Term-ReadLine-Perl
 install mailx
-install iptraf-ng
 install iperf
 install fping
 install ethtool
@@ -76,12 +75,8 @@ install dnsmasq
 install sendmail
 install sendmail-cf
 install telnet
-install s3cmd
-install rsyslog-relp
 install strace
 install ltrace
-install mbuffer
-install yajl
 install perl-Sys-Syslog
 install glibc-devel
 install gcc-c++
@@ -98,4 +93,10 @@ upgrade
 run
 EOF
 
-pip install s3cmd
+pip install --upgrade s3cmd
+
+#yum -y --skip-broken --enablerepo=epel shell <<EOF
+#install msmtp
+#upgrade
+#run
+#EOF

@@ -51,6 +51,9 @@ rm -rf /var/lib/cloud/data
 rm -rf /var/lib/cloud/instance
 rm -rf /var/lib/cloud/instances/*
 
+# 
+rm -f /etc/update-motd.d/*
+
 # Remove 'fedora' userid if it was set up
 
 userdel -f fedora

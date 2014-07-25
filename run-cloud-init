@@ -2,7 +2,7 @@
 
 # Just for testing to see what it does
 
-cloud-init init
 cloud-init init --local
+cloud-init init
 cloud-init modules --mode=config
 cloud-init modules --mode=final

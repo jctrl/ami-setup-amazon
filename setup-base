@@ -62,6 +62,8 @@ EOF
 
 rm -f /etc/sudoers.d/cloud-init
 
+git config --global push.default simple
+
 echo "######################"
 echo "Manual Action Required"
 echo "######################"

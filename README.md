@@ -19,4 +19,4 @@ Run these commands:
 	# reboot if needed
 	./post-install
 
-Populate any deployment credentials on the box
+Populate any per-client deployment credentials and tools on the box

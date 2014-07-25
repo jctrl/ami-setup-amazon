@@ -72,6 +72,8 @@ EOF
 
 rm -f /etc/sudoers.d/cloud-init
 
+cat /dev/null > /etc/motd
+
 git config --global push.default simple
 
 echo "######################"

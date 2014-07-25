@@ -74,6 +74,7 @@ cat >/etc/ntp/step-tickers <<EOF
 EOF
 
 rm -f /etc/sudoers.d/cloud-init
+rm -rf /root/perl5
 
 cat /dev/null > /etc/motd
 

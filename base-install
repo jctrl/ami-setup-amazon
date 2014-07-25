@@ -110,3 +110,4 @@ notest install MongoDB
 EOF
 
 rm -rf /root/.cpan/build
+rm -rf /root/perl5

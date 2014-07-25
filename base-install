@@ -89,6 +89,7 @@ install perl-CGI
 install mysql
 install yum-utils
 install python-pip
+install perl-CPAN
 upgrade
 run
 EOF

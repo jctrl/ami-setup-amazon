@@ -109,5 +109,21 @@ notest install Path::Tiny
 notest install MongoDB
 EOF
 
+#
+# Upgrade rsyslog from external repo
+#
+cat >/etc/yum.repos.d/rsyslog.repo <<EOF
+[rsyslog_v8]
+name=Adiscon CentOS-\$releasever - local packages for \$basearch
+baseurl=http://rpms.adiscon.com/v8-stable/epel-6/\$basearch
+enabled=0
+gpgcheck=0
+gpgkey=http://rpms.adiscon.com/RPM-GPG-KEY-Adiscon
+priority=5
+protect=1
+EOF
+yum -y --enablerepo=rsyslog_v8 upgrade rsyslog
+
+
 rm -rf /root/.cpan/build
 rm -rf /root/perl5

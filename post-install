@@ -80,8 +80,10 @@ cat /dev/null > /etc/motd
 
 git config --global push.default simple
 
+if [ ! -e "/root/.awssecret" ]; then
 echo "######################"
 echo "Manual Action Required"
 echo "######################"
 echo "Populate ~root/.awssecret and ~root/.s3cfg with AWS deployment keys mode 0600."
 echo ""
+fi

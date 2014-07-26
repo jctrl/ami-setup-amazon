@@ -26,6 +26,14 @@ mkdir -p /root/.ssh
 # each deployed instance should have fresh keys
 rm -f /etc/ssh/*key*
 
+cat /dev/null > /etc/hostname
+ed /etc/sysconfig/network <<EOF
+g/HOSTNAME/d
+.
+w
+q
+EOF
+
 find /var/log -name "*-2*" -exec rm -f {} \;
 find /var/log -name "*.old" -exec rm -f {} \;
 

@@ -92,11 +92,10 @@ EOF
 
 pip install --upgrade s3cmd
 
-#yum -y --skip-broken --enablerepo=epel shell <<EOF
-#install msmtp
-#upgrade
-#run
-#EOF
+yum -y --skip-broken --enablerepo=epel shell <<EOF
+install iperf
+run
+EOF
 
 rm -rf /root/.cpan/build
 echo "" | perl -MCPAN -e shell
